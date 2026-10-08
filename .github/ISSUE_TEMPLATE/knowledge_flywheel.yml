@@ -1,0 +1,24 @@
+name: 知识飞轮 / 论文线索与行业观察
+description: 沉淀论文线索、行业动态、复现尝试与想法，长期构建具身智能证据化知识库
+title: "[Flywheel] "
+labels: ["knowledge"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 类型
+      options:
+        - 论文线索（值得纳入学术坐标的工作）
+        - 行业观察 / 数据
+        - 复现尝试（跑通了 demo 或扩展了规则）
+        - 反驳 / 质疑（欢迎严苛批评）
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: 内容
+      description: 请附出处链接或数据来源；若与总纲的学术坐标（拦截位置 × 机制重量）相关，请注明该工作的拦截位置与机制重量
+    validations:
+      required: true

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 讨论 / 提问
+    url: https://github.com/Fan-Ruixuan/Evidence-Based-Embodied-AI/discussions
+    about: 非纠错类的开放讨论（框架定位、上手路径、合作意向）请到 Discussions

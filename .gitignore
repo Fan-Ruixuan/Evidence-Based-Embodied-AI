@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# 本地工作稿（仓库内以 docs/ 为唯一版本）
+行之有据-轻量化切入具身智能的工程框架.md
+图片/

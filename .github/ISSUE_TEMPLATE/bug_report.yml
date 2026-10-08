@@ -1,0 +1,40 @@
+name: Bug report / 论述与代码纠错
+description: 发现论述错误、逻辑漏洞或代码缺陷时使用
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题区域
+      options:
+        - 文档论述（docs/ 总纲或术语表）
+        - 规则校验器代码（src/semantic_checker）
+        - 架构图 / 定位图
+        - 参考文献引用
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 问题描述
+      description: 请指出具体位置（文件/章节/规则 ID），并说明为什么错、正确的是什么
+      placeholder: 例如：R1_VISIBILITY 在 X 情况下会误报，因为……
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现方式（代码类问题）
+      placeholder: |
+        最小复现代码或指令文本
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 证据
+      description: 支撑你判断的论文、标准或实验数据（本仓库的理念是举证责任，欢迎出示证据）
+    validations:
+      required: false
