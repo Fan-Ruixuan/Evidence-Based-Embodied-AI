@@ -115,6 +115,7 @@ print(verdict.suggestion)  # 建议先移开遮挡物「书本」，再确认可
 ## Roadmap
 
 进度同步维护在 GitHub Projects 看板（Todo / In Progress / Done 三列）：
+> 看板地址：[Roadmap 看板](https://github.com/users/Fan-Ruixuan/projects/2/views/1?layout_template=board)
 
 | 篇 | 主题 | 核心工程问题 | 状态 |
 |---|---|---|---|
