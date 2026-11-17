@@ -59,12 +59,18 @@ print(verdict)   # [规则拦截] 目标「杯子」被遮挡（遮挡物：书�
 # SemanticChecker(llm_recheck=lambda action: (ok, reason))
 ```
 
-## 阶段二计划（MuJoCo 仿真）
+## 阶段二：MuJoCo 仿真（v1 已完成）
 
-- 基于 MuJoCo 官方示例搭建桌面场景（杯子 + 书本）；
-- 批量渲染不同遮挡/非遮挡配置的截图，用 VLM 生成候选动作；
-- 统计校验器对"遮挡目标仍抓取"的拦截率与误报率，输出可复现实验脚本；
-- 结果与[第三篇校验层消融](../../README.md#roadmap)共用一套测试集。
+- 桌面遮挡场景（桌面 + 杯子 + 一摞书）由 MJCF 基本几何体构成，无外部网格依赖；
+- 168 个场景用射线几何判定真值（遮挡 44 / 可见 124），相机 8 方位、书本 7 方向 × 3 距离；
+- 感知基线为「完美感知」与「带漏检率/自陈诚实度的误差模型」，**未接入真实 VLM**；
+- 输出 TPR / FPR / 漏放行数消融表：感知诚实时 FPR 为 0、TPR = 1-漏检率；诚实度降到 50% 时 FPR 升至约 54%；
+- 结果与解读见 [校验层消融报告](../../docs/03-校验层消融-仿真报告.md)，代码在 [src/mujoco_eval](../mujoco_eval/)。
+
+```bash
+pip install -r requirements-sim.txt
+python src/mujoco_eval/run.py --render
+```
 
 ## 已知边界
 

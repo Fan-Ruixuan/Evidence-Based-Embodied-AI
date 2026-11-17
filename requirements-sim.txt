@@ -1,0 +1,4 @@
+# 阶段二仿真实验依赖（CPU 即可运行；渲染示例图需要 OpenGL 上下文）
+mujoco>=3.0
+numpy>=1.21
+Pillow>=9.0
